@@ -22,8 +22,6 @@ const taskSchema = new mongoose.Schema({
 });
 
 taskSchema.index({ title: 1, text: -1 });
-// taskSchema.index({ orderId: 1, orderDate: -1, price: 1 });
-// find({orderId: 1}, price: {$gte: 100, $lte: 200}).sort({orderDate: -1});
 
 taskSchema.statics.getAll = function () {
     return Task.find().lean();

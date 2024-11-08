@@ -11,18 +11,6 @@ const insertTask = ({ title, text }) => {
     return Task.create({ title, text });
 }
 
-// const updateTask = async ({ id, toUpdate }) => {
-//     const task = await Task.findById({ _id: id });
-//     if(!task) return null;
-//
-//     Object.keys(toUpdate).forEach((value) => {
-//         task[value] = toUpdate[value];
-//     });
-//
-//     await task.save();
-//
-//     return task;
-// }
 
 const updateTask = async ({ id, toUpdate, upsert = false }) => {
     return Task.findByIdAndUpdate(
